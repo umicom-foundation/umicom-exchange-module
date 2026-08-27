@@ -1,0 +1,40 @@
+schema: umicom.application.v1
+
+application:
+  id: org.umicom.exchange
+  name: Umicom Commodity Exchange
+  short_name: Commodity Exchange
+  version: 0.1.0
+  executable: umicom-exchange-console
+  aliases: [exchange]
+
+framework:
+  minimum_version: 0.9.0
+  compatible_major: 0
+
+frontends:
+  - console
+
+entry:
+  kind: workbench
+  taskbar_group: finance
+  pinned_by_default: false
+  default_layout: marketplace
+
+capabilities:
+  - umicom.exchange
+  - umicom.commodity
+  - umicom.accounting
+  - umicom.surveillance
+  - umicom.application.experience
+  - umicom.application.federation
+
+source_layout:
+  product_root: src
+  composition_root: src
+  console_frontend: src/console
+
+boundaries:
+  owns_reusable_framework_logic: false
+  owns_persistence: false
+  consumes_framework_services: true
