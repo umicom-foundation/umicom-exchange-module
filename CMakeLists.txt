@@ -72,6 +72,12 @@ target_link_libraries(umicom_exchange_module PUBLIC
 umicom_apply_warnings(umicom_exchange_module)
 umicom_apply_sanitizers(umicom_exchange_module)
 
+include(
+    "${CMAKE_CURRENT_SOURCE_DIR}/../../framework/cmake/UmicomThinApplicationRuntime.cmake")
+umicom_extend_thin_application_runtime(
+    NAME "exchange"
+    TARGET "umicom_exchange_module")
+
 if(UMICOM_EXCHANGE_BUILD_CONSOLE)
     add_executable(umicom-exchange-console
         src/console/main.c)
