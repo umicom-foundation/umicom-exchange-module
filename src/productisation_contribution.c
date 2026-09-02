@@ -28,12 +28,20 @@ static const UmiProductApplicationAdoption ADOPTION = {
     1
 };
 
+/*
+ * Provide the exchange productisation contribution operation used by this module and its
+ * client applications.
+ */
 const UmiProductApplicationAdoption *
 umi_exchange_productisation_contribution(void)
 {
     return &ADOPTION;
 }
 
+/*
+ * Provide the exchange productisation snapshot operation used by this module and its
+ * client applications.
+ */
 UmiStatus umi_exchange_productisation_snapshot(
     UmiProductApplicationAdoptionSnapshot *out_snapshot)
 {

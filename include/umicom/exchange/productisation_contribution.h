@@ -23,10 +23,22 @@
 extern "C" {
 #endif
 
+/**
+ * Provide the exchange productisation contribution operation used by this module and its
+ * client applications.
+ */
 const UmiProductApplicationAdoption *
 umi_exchange_productisation_contribution(void);
+/**
+ * Provide the exchange productisation snapshot operation used by this module and its
+ * client applications.
+ */
 UmiStatus umi_exchange_productisation_snapshot(
     UmiProductApplicationAdoptionSnapshot *out_snapshot);
+/**
+ * Initialise exchange product session from caller-provided values so later operations
+ * receive a known state.
+ */
 UmiStatus umi_exchange_product_session_init(
     UmiProductApplicationSession *out_session);
 /* Build welcome-screen workspace choices from the canonical Framework profile. */
