@@ -6,6 +6,8 @@ application:
   short_name: Commodity Exchange
   version: 0.1.0
   executable: umicom-exchange-console
+  native_executable: umicom-exchange
+  console_executable: umicom-exchange-console
   aliases: [exchange]
 
 framework:
@@ -14,6 +16,8 @@ framework:
 
 frontends:
   - console
+  # Shared Framework GTK layout preview; domain services require controllers.
+  - gtk
 
 entry:
   kind: workbench
