@@ -148,3 +148,8 @@ umicom_add_application_productisation_contribution(
     TARGET umicom_exchange_productisation
     SOURCE "src/productisation_contribution.c"
     TEST_SOURCE "tests/test_productisation_contribution.c")
+
+# Select the shared operational service without replacing the existing module,
+# console, productisation contribution, tests or catalogue layouts.
+include("${CMAKE_CURRENT_SOURCE_DIR}/../../framework/cmake/UmicomFinanceOperations.cmake")
+umicom_attach_finance_operations(NAME exchange TARGET umicom_exchange_module)
